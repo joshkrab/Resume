@@ -275,13 +275,6 @@ body {
     padding: 20px;
   }
 
-  .dots {
-    /* display: none; */
-  }
-  .projects-link {
-    /* display: block; */
-  }
-
   .projects-item {
     margin: 0px 0px 10px 0px;
   }
@@ -293,10 +286,6 @@ body {
 
   .photo {
     width: 300px;
-  }
-
-  .contacts {
-    /* margin: 20px; */
   }
 
   .about-me {
