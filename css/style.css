@@ -127,7 +127,6 @@ body {
 }
 
 .profession {
-  font-size: 14px;
   font-weight: 700;
   font-style: normal;
   letter-spacing: normal;
@@ -151,7 +150,7 @@ body {
 }
 
 .info-conteiner {
-  margin-bottom: 65px;
+  margin-bottom: 55px;
 }
 
 .about-me-title {
@@ -225,12 +224,13 @@ body {
 }
 
 .profession-divider {
-  color: black;
+  color: #a8a8a8;
 }
 
 .profession-duties {
   margin-top: 14px;
   margin-bottom: 30px;
+  padding: 0px 0px 0px 18px;
 }
 
 .profession-duties-item {
