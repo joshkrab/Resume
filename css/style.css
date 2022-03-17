@@ -259,7 +259,7 @@ body {
   letter-spacing: normal;
   line-height: 24px;
   margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .study-profession {
@@ -416,6 +416,9 @@ body {
 }
 
 @media (max-width: 423px) {
+  .about-me {
+    padding: 20px 20px 20px 20px;
+  }
   .wrapper {
     display: block;
   }
@@ -432,7 +435,7 @@ body {
 
   .tech-skills-list,
   .soft-skills ul {
-    width: 160px;
+    width: 150px;
     margin: 0 auto;
     text-align: left;
   }
@@ -440,5 +443,32 @@ body {
   .projects-container {
     /* text-align: center; */
     padding: 0px 0px 0px 40px;
+  }
+
+  .description,
+  .profession-duties-item {
+    text-align: justify;
+  }
+
+  .profession,
+  .name {
+    text-align: center;
+  }
+
+  .profession-time,
+  .study-profession {
+    line-height: 10px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .university {
+    font-size: 12px;
+  }
+
+  .tech-skills-title,
+  .soft-skills-title {
+    /* text-align: left; */
+    padding: 0px 0px 0px 0px;
   }
 }
