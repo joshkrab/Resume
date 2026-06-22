@@ -142,18 +142,11 @@ body {
 }
 
 .description {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
   line-height: 24px;
-}
-
-.desc-line {
-  display: block;
-  text-align: justify;
-  text-align-last: justify;
-  max-width: 620px;
 }
 
 .info-conteiner {
