@@ -127,6 +127,7 @@ body {
 }
 
 .profession {
+  font-size: 1.5em;
   font-weight: 700;
   font-style: normal;
   letter-spacing: normal;
@@ -134,11 +135,12 @@ body {
 }
 
 .name {
-  font-size: 45px;
+  font-size: 38px;
   font-weight: 700;
   font-style: normal;
   letter-spacing: normal;
-  line-height: 89px;
+  line-height: 1.2;
+  margin: 16px 0 20px;
 }
 
 .description {
@@ -275,7 +277,7 @@ body {
   line-height: 24px;
 }
 
-@media (max-width: 1180px) {
+@media screen and (max-width: 1180px) {
   body {
     padding: 20px;
   }
@@ -302,7 +304,7 @@ body {
   }
 }
 
-@media (max-width: 1090px) {
+@media screen and (max-width: 1090px) {
   body {
     padding: 20px;
   }
@@ -320,11 +322,11 @@ body {
 
   .name {
     font-size: 35px;
-    line-height: 70px;
+    line-height: 1.2;
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .contacts-title,
   .tech-skills-title,
   .soft-skills-title {
@@ -418,7 +420,7 @@ body {
   }
 }
 
-@media (max-width: 427px) {
+@media screen and (max-width: 427px) {
   .about-me {
     padding: 20px 20px 20px 20px;
   }
@@ -482,4 +484,406 @@ body {
 
 .experience-container {
   margin-bottom: 46px;
+}
+
+.product-line {
+  margin-top: 6px;
+}
+
+/* Projects on wide screens: dots fill the gap, tech list stays on the right.
+   Works for any number of items (toggle items by commenting them in HTML). */
+@media screen and (min-width: 1091px) {
+  .projects-container ol {
+    list-style: none;
+    counter-reset: projects;
+  }
+
+  .projects-item {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    position: relative;
+    counter-increment: projects;
+  }
+
+  .projects-item::before {
+    content: counter(projects) ".";
+    position: absolute;
+    left: -30px;
+    width: 24px;
+    text-align: right;
+  }
+
+  .projects-link {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+
+
+  /* let the main column shrink to the wrapper instead of growing with the row */
+  .about-me {
+    min-width: 0;
+  }
+
+  .dots {
+    flex: 1 1 24px;
+    min-width: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    contain: inline-size;
+  }
+
+  .projects-item > span:last-child {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
+/* Print-only skills block (hidden on screen) */
+.print-skills {
+  display: none;
+}
+
+/* =========================================================
+   PRINT / PDF: single column, A4
+   Same HTML, blocks reordered for correct text order
+   ========================================================= */
+@page {
+  size: A4;
+  margin: 12mm 14mm;
+}
+
+@media print {
+  :root {
+    --accent: #1f3a5f;
+    --muted: #555555;
+    --link: #2456c9;
+  }
+
+  body {
+    background: #ffffff;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #000000;
+  }
+
+  /* one grid, sidebar and main dissolved into it */
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 20px;
+    max-width: none;
+    margin: 0;
+    box-shadow: none;
+    background: #ffffff;
+    border-top: 6px solid var(--accent);
+    padding-top: 14px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sidebar,
+  .about-me,
+  .info-conteiner {
+    display: contents;
+  }
+
+  /* order = reading order */
+  .profession          { order: 1; grid-column: 1; grid-row: 1; }
+  .name                { order: 2; grid-column: 1; grid-row: 2; }
+  .contacts            { order: 3; grid-column: 1; grid-row: 3; }
+  .photo               { order: 4; grid-column: 2; grid-row: 1 / span 3; }
+  .description         { order: 5; grid-column: 1 / -1; grid-row: 4; }
+  .print-skills        { display: block; order: 6; grid-column: 1 / -1; grid-row: 5; }
+  .tech-skills         { display: none; }
+  .experience-container{ order: 7; grid-column: 1 / -1; grid-row: 6; }
+  .projects-container  { order: 8; grid-column: 1 / -1; grid-row: 7; }
+  .education-container { order: 9; grid-column: 1 / -1; grid-row: 8; }
+  .languages           { order: 10; grid-column: 1 / -1; grid-row: 9; }
+  .soft-skills:not(.languages) { display: none; }
+
+  /* ---- header ---- */
+  .photo {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-self: start;
+  }
+
+  .profession {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 20pt;
+    line-height: 1.2;
+    color: var(--accent);
+  }
+
+  .name {
+    font-size: 12pt;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--muted);
+    margin: 2px 0 0;
+  }
+
+  .contacts {
+    margin: 6px 0 0;
+    font-size: 9pt;
+  }
+
+  .contacts-title,
+  .contacts-letters {
+    display: none;
+  }
+
+  .contacts > div {
+    display: inline;
+  }
+
+  .contacts > div + div::before {
+    content: "|";
+    color: var(--muted);
+    margin: 0 6px;
+  }
+
+  .contacts-link,
+  .projects-link {
+    font-size: inherit;
+    line-height: inherit;
+    color: var(--link);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .description {
+    font-size: 10.5pt;
+    line-height: 1.45;
+    margin-top: 10px;
+  }
+
+  /* ---- section titles ---- */
+  .tech-skills-title,
+  .soft-skills-title,
+  .about-me-title {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 11.5pt;
+    font-weight: 700;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 2px;
+    margin: 0 0 8px;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .print-skills,
+  .languages,
+  .experience-container,
+  .projects-container,
+  .education-container {
+    margin: 20px 0 0;
+    padding: 0;
+  }
+
+  /* ---- skills: labeled lines ---- */
+  .print-skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .print-skills li {
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  /* ---- languages: one flowing line ---- */
+  .languages ul {
+    list-style: none;
+    padding: 0;
+    width: auto;
+    margin: 0;
+    text-align: left;
+  }
+
+  .soft-skills-item {
+    display: inline;
+    margin: 0;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #000000;
+  }
+
+  .soft-skills-item + .soft-skills-item::before {
+    content: "·";
+    color: var(--muted);
+    margin: 0 6px;
+  }
+
+  .soft-skills-words {
+    color: #000000;
+  }
+
+  /* ---- experience ---- */
+  .experience-container > div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 12px;
+    margin-top: 10px;
+  }
+
+  .experience-container > div > * {
+    grid-column: 1 / -1;
+  }
+
+  .experience-container > div > .profession-title {
+    grid-column: 1;
+  }
+
+  .experience-container > div > span.profession-time {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: baseline;
+    text-align: right;
+    font-size: 10.5pt;
+  }
+
+  .profession-title {
+    font-size: 10.5pt;
+    line-height: 1.45;
+    margin: 0;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .prof-company {
+    color: var(--accent);
+  }
+
+  .profession-time,
+  .profession-divider {
+    font-size: 10pt;
+    line-height: 1.45;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .profession-duties {
+    margin: 4px 0 0;
+    padding: 0 0 0 18px;
+  }
+
+  .profession-duties-item {
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #000000;
+    margin-bottom: 2px;
+    text-align: left;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* ---- projects ---- */
+  .projects-container ol {
+    list-style: disc;
+    padding: 0 0 0 18px;
+  }
+
+  .projects-item {
+    font-weight: 400;
+    margin: 0 0 2px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .projects-link {
+    display: inline;
+  }
+
+  .dots,
+  .screen-only {
+    display: none;
+  }
+
+  .projects-item b {
+    display: none;
+  }
+
+  .tech-name::before {
+    content: "— ";
+  }
+
+  .tech-name {
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #000000;
+  }
+
+  /* ---- education ---- */
+  .university {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #000000;
+    margin: 10px 0 0;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+
+  .study-profession {
+    font-size: 10.5pt;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+
+  .product-line {
+    margin-top: 2px;
+  }
+
+  /* keep short sections and education entries on one page
+     (Safari ignores break-after on headings in this layout) */
+  .projects-container,
+  .languages,
+  .edu-entry {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* education: dates inline after the program line (right-aligned dates
+     get detached by some parsers when nothing wide sits below them) */
+  .edu-entry {
+    margin-top: 10px;
+  }
+
+  .ed-title + .edu-entry {
+    margin-top: 0;
+  }
+
+  .edu-entry > .university {
+    margin: 0;
+  }
+
+  .edu-entry > .study-profession {
+    display: inline;
+  }
+
+  .edu-entry > .profession-time {
+    display: inline;
+    font-size: 10.5pt;
+  }
+
+  .edu-entry > .study-profession + .profession-time::before {
+    content: " · ";
+    font-style: normal;
+  }
 }
