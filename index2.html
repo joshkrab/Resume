@@ -10,11 +10,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     /* Print/ATS: plain fonts for headings, full URLs instead of link labels */
-    .print-link { display: none; }
+    .print-link {
+      display: none;
+    }
+
     @media print {
-      .wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4 { font-family: Arial, Helvetica, sans-serif !important; }
-      .screen-link { display: none !important; }
-      .print-link { display: inline !important; }
+
+      .wrapper h1,
+      .wrapper h2,
+      .wrapper h3,
+      .wrapper h4 {
+        font-family: Arial, Helvetica, sans-serif !important;
+      }
+
+      .screen-link {
+        display: none !important;
+      }
+
+      .print-link {
+        display: inline !important;
+      }
     }
   </style>
 </head>
@@ -82,7 +97,7 @@
           </li>
 
           <li class="tech-skills-item">
-            <span class="tech-skills-words">Docker / Linux / Git / GitHub Actions / Jest</span>
+            <span class="tech-skills-words">Docker / Kubernetes / Linux / Git / GitHub Actions / Jest</span>
           </li>
 
         </ul>
@@ -112,12 +127,12 @@
       <!-- Main info -->
       <div class="info-conteiner">
         <h1 class="profession">Ihor Neizvestnyi</h1>
-        <h2 class="name">Full-stack Product Engineer (TypeScript, Vue.js, AI tooling)</h2>
+        <h2 class="name">Full-stack Product Engineer (TypeScript, Vue/React, AI tooling)</h2>
 
         <p class="description">
           Full-stack TypeScript engineer with 5+ years in web development. Owned product features end to end on a
           customer communication platform used by major banks and Nova Post, from NestJS APIs, queues and PostgreSQL
-          to the Vue.js agent UI. Built 5 Claude Code plugins (45 skills, MCP servers) adopted by a 12-person team.
+          to the Vue.js agent UI. Built 5 Claude Code plugins (45 skills, MCP servers) adopted by a 12&#8209;person team.
         </p>
       </div>
 
@@ -131,7 +146,7 @@
           <li><b>Architecture:</b> event-driven design, message queues (BullMQ), retries, idempotency, DDD</li>
           <li><b>Data:</b> PostgreSQL, Redis, MySQL, MongoDB, TypeORM, Sequelize</li>
           <li><b>Cloud:</b> AWS S3, Azure (Entra ID OAuth apps)</li>
-          <li><b>DevOps &amp; Testing:</b> Docker, Linux, Git, GitHub Actions, Jest</li>
+          <li><b>DevOps &amp; Testing:</b> Docker, Kubernetes, Linux, Git, GitHub Actions, Jest</li>
         </ul>
       </div>
 
@@ -149,12 +164,13 @@
           <ul class="profession-duties">
             <li class="profession-duties-item">
               Delivered <b>200+ tasks</b> across 4 NovaTalks <b>NestJS</b> services
-              (<span class="screen-link"><a target="_blank" class="contacts-link" href="https://novatalks.com.ua/en/">Website</a> ·
-              <a target="_blank" class="contacts-link" href="https://www.youtube.com/watch?v=xKpagvqNohA">Demo
-                video</a></span><span class="print-link"><a target="_blank" class="contacts-link"
-                href="https://novatalks.com.ua/en/">novatalks.com.ua/en</a> ·
-              <a target="_blank" class="contacts-link"
-                href="https://www.youtube.com/watch?v=xKpagvqNohA">youtube.com/watch?v=xKpagvqNohA</a></span>)
+              (<span class="screen-link"><a target="_blank" class="contacts-link"
+                  href="https://novatalks.com.ua/en/">Website</a> ·
+                <a target="_blank" class="contacts-link" href="https://www.youtube.com/watch?v=xKpagvqNohA">Demo
+                  video</a></span><span class="print-link"><a target="_blank" class="contacts-link"
+                  href="https://novatalks.com.ua/en/">novatalks.com.ua/en</a> ·
+                <a target="_blank" class="contacts-link"
+                  href="https://www.youtube.com/watch?v=xKpagvqNohA">youtube.com/watch?v=xKpagvqNohA</a></span>)
               for a customer communication platform used by 20+ companies.
             </li>
             <li class="profession-duties-item">
@@ -166,7 +182,8 @@
             </li>
             <li class="profession-duties-item">
               Owned the <b>email channel</b>: OAuth2 (Google, Microsoft), IMAP/SMTP, parsing for 5 providers;
-              <b>BullMQ/Redis</b> retry queue for outgoing mail, <b>background workers</b> with deduplication for incoming.
+              <b>BullMQ/Redis</b> retry queue for outgoing mail, <b>background workers</b> with deduplication for
+              incoming.
             </li>
             <li class="profession-duties-item">
               Integrated <b>third-party APIs</b>: Telegram, WhatsApp, Instagram, Facebook Messenger, Signal, Viber.
@@ -182,8 +199,7 @@
               Built chatbot/IVR event logging with <b>BullMQ</b> batching.
             </li>
             <li class="profession-duties-item">
-              Closed pentest findings (<b>stored XSS</b>, HTML injection, input validation); raised unit tests from
-              64 to 87.
+              Closed pentest findings (<b>stored XSS</b>, HTML injection, input validation).
             </li>
             <li class="profession-duties-item">
               Reviewed pull requests and onboarded new developers.
@@ -203,7 +219,8 @@
               Developed an internal office booking and meeting room scheduling system in the style of Google Calendar.
             </li>
             <li class="profession-duties-item">
-              Designed the REST API and PostgreSQL schema (<b>NestJS, TypeORM</b>) and built the <b>React.js</b> calendar
+              Designed the REST API and PostgreSQL schema (<b>NestJS, TypeORM</b>) and built the <b>React.js</b>
+              calendar
               UI for booking rooms and meetings.
             </li>
           </ul>
@@ -251,18 +268,22 @@
               href="https://www.linkedin.com/in/ihor-neizvestnyi-76a1a2202/overlay/Education/786078848/treasury/?profileId=ACoAADOkJ8IBAlka952sf1YDm9G2X_8VX7Xbnp8">Certificate</a>
           </p>
           <p class="study-profession">Front-End to Full-stack</p>
-          <span class="profession-time">Feb 2022
+          <span class="profession-time">Sep 2021 – Feb 2022
             <span class="profession-divider">|</span> Ukraine
           </span>
         </div>
 
         <div class="edu-entry">
-          <p class="university">Kharkiv Radio Engineering College</p>
-          <p class="study-profession">Technician-Programmer (vocational diploma), Programming for Computers and
+          <p class="university">Kharkiv Radio Engineering College <br>
+            (higher education institution, accreditation level I)
+            &nbsp;·&nbsp;
+            <a target="_blank" class="contacts-link"
+              href="https://www.linkedin.com/in/ihor-neizvestnyi-76a1a2202/overlay/Education/740879628/treasury/?profileId=ACoAADOkJ8IBAlka952sf1YDm9G2X_8VX7Xbnp8">Diploma</a>
+          </p>
+          <p class="study-profession">Junior Specialist diploma, Technician-Programmer · Programming for Computers and
             Automated Systems</p>
-          <span class="profession-time">2002
-            <span class="profession-divider">|</span> Ukraine
-          </span>
+          <span class="profession-time">Sep 1998 – Jun 2002
+            <span class="profession-divider">|</span> Ukraine </span>
         </div>
       </div>
 
